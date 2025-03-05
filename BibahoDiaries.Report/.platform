@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "BibahoDiaries"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8575ad80-49a4-41cb-8afe-13118442fd61"
+  }
+}

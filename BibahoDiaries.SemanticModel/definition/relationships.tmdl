@@ -1,0 +1,17 @@
+relationship 56868f31-8527-4fd4-833c-8afc99054580
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Engagement Data'.Date
+	toColumn: LocalDateTable_8ddb57fc-7b09-4450-a8b4-2ca8d0d0347b.Date
+
+relationship 5660918c-9f63-baf2-9af8-cee055b05cf7
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Calendar.Date
+	toColumn: 'Engagement Data'.Date
+
+relationship ccb5a072-96c0-ec61-27af-ad2dc61fce63
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Time Period'.Key
+	toColumn: 'Visits Parameter'.'Visits Parameter Order'
+

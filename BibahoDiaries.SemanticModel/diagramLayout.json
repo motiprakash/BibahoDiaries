@@ -1,0 +1,128 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 173.33332824707031,
+        "y": 199.99998474121094
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 560,
+            "y": 519
+          },
+          "nodeIndex": "Engagement Data",
+          "nodeLineageTag": "30a60283-52c0-4d29-b7c2-eade1e6d06c7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 243
+          },
+          "nodeIndex": "Calculation",
+          "nodeLineageTag": "08fec8e7-8fca-4e6d-9961-24a2ab76b4b0",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 71,
+            "y": 427
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "0fc26539-dae5-4fc9-abc3-4c41c639b261",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 773,
+            "y": 313
+          },
+          "nodeIndex": "Time Period",
+          "nodeLineageTag": "f93a7453-fc9e-4288-8f2d-e9647c0130aa",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 531.66667175292969,
+            "y": 82
+          },
+          "nodeIndex": "Visits Parameter",
+          "nodeLineageTag": "c863cf77-0153-420e-a0ef-df704f2916b9",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 107.16666793823242,
+            "y": 116.02604675292969
+          },
+          "nodeIndex": "Time Period",
+          "nodeLineageTag": "f93a7453-fc9e-4288-8f2d-e9647c0130aa",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 463.16666793823242,
+            "y": 89.026046752929688
+          },
+          "nodeIndex": "Visits Parameter",
+          "nodeLineageTag": "c863cf77-0153-420e-a0ef-df704f2916b9",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Layout 1",
+  "defaultDiagram": "All tables"
+}

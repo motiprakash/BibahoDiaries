@@ -1,0 +1,100 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU08",
+      "reportVersionAtImport": "5.58",
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Metricalist_-_Simply_Modern_Da4445027511130528.json",
+      "reportVersionAtImport": "5.58",
+      "type": "RegisteredResources"
+    }
+  },
+  "layoutOptimization": "None",
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU08",
+          "path": "BaseThemes/CY24SU08.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Bibaho_Diaries_Logo_For_Facebo729857298241388.png",
+          "path": "Bibaho_Diaries_Logo_For_Facebo729857298241388.png",
+          "type": "Image"
+        },
+        {
+          "name": "Metricalist_-_Simply_Modern_Da4445027511130528.json",
+          "path": "Metricalist_-_Simply_Modern_Da4445027511130528.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "Megaphone_-_Golden3061822023519687.png",
+          "path": "Megaphone_-_Golden3061822023519687.png",
+          "type": "Image"
+        },
+        {
+          "name": "Chat_Bubble_-_Golden7759404265328345.png",
+          "path": "Chat_Bubble_-_Golden7759404265328345.png",
+          "type": "Image"
+        },
+        {
+          "name": "Foot_Print_-_Golden1570511931809011.png",
+          "path": "Foot_Print_-_Golden1570511931809011.png",
+          "type": "Image"
+        },
+        {
+          "name": "User_-_Golden5908544012205585.png",
+          "path": "User_-_Golden5908544012205585.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

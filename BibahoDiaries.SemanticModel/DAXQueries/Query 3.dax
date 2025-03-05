@@ -1,0 +1,84 @@
+DEFINE
+	MEASURE 'Calculation'[Visits vs Last Colour] = VAR _Week =
+		VAR Cur = [Visits - This week]
+		VAR Prev = [Visits - Last week]
+		VAR Change = (Cur - Prev)
+		VAR Color =
+		IF(
+			Change > 0,
+			[Green],
+			IF(
+				Change < 0,
+				[Red],
+				[Yellow]
+			)
+		)
+		RETURN
+			Color
+
+
+		VAR _Month =
+		VAR Cur = [Visits - This Month]
+		VAR Prev = [Visits - Last Month]
+		VAR Change = (Cur - Prev)
+		VAR Color =
+		IF(
+			Change > 0,
+			[Green],
+			IF(
+				Change < 0,
+				[Red],
+				[Yellow]
+			)
+		)
+		RETURN
+			Color
+
+		VAR _Quarter =
+		VAR Cur = [Visits - This Quarter]
+		VAR Prev = [Visits - Last Quarter]
+		VAR Change = (Cur - Prev)
+		VAR Color =
+		IF(
+			Change > 0,
+			[Green],
+			IF(
+				Change < 0,
+				[Red],
+				[Yellow]
+			)
+		)
+		RETURN
+			Color
+
+
+		VAR _Year =
+		VAR Cur = [Visits - This Year]
+		VAR Prev = [Visits - Last Year]
+		VAR Change = (Cur - Prev)
+		VAR Color =
+		IF(
+			Change > 0,
+			[Green],
+			IF(
+				Change < 0,
+				[Red],
+				[Yellow]
+			)
+		)
+		RETURN
+			Color
+
+
+		VAR TP = CALCULATE(FIRSTNONBLANK(
+			'Time Period'[Time Period],
+			FALSE()
+		))
+		RETURN
+			SWITCH(
+				TP,
+				"This Week", _Week,
+				"This Month", _Month,
+				"This Quarter", _Quarter,
+				"This Year", _Year
+			)
