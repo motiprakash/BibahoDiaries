@@ -1,0 +1,1368 @@
+table Calculation
+	lineageTag: 08fec8e7-8fca-4e6d-9961-24a2ab76b4b0
+
+	measure 'Sum of Reach' = SUM ( 'Engagement Data'[Reach] ) + 0
+		displayFolder: Base Formula
+		lineageTag: dff250e2-6c78-4f54-add2-d046fa6161f7
+
+		formatStringDefinition = "##,##,##0"
+
+	measure 'Sum of Interaction' = SUM ( 'Engagement Data'[Interaction] ) + 0
+		displayFolder: Base Formula
+		lineageTag: b99557ef-7df9-4a53-964e-3d16e37bc008
+
+		formatStringDefinition = "##,##,##0"
+
+	measure 'Sum of Follows' = SUM ( 'Engagement Data'[Follows] ) + 0
+		displayFolder: Base Formula
+		lineageTag: fc717d75-b99d-482c-85e5-fdd3ae47ec8f
+
+		formatStringDefinition = "##,##,##0"
+
+	measure 'Sum of Visits' = ```
+			
+			 SUM ( 'Engagement Data'[Visits] ) + 0
+			```
+		displayFolder: Base Formula
+		lineageTag: bb4e2058-e700-434d-9b7e-49222268ffd3
+
+		formatStringDefinition = "##,##,##0"
+
+	measure 'Visitors Conversion Rate' = DIVIDE ( [Sum of Follows], [Sum of Visits] , 0 )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Base Formula
+		lineageTag: 66055ac8-484f-4556-bb9a-7332130baab0
+
+	measure 'Engagement Rate' = DIVIDE ( [Sum of Interaction], [Sum of Reach], 0 )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Base Formula
+		lineageTag: 5c0375d3-f506-4cf7-b1ac-1885148f0242
+
+	measure 'Follows - This week' = CALCULATE ( [Sum of Follows], 'Calendar'[This Week] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: 0d3e0ff3-9652-4e2f-9660-4ccb5963a46a
+
+	measure 'Follows - Last week' = CALCULATE ( [Sum of Follows], 'Calendar'[Last Week WTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: aa052fb1-93c3-45ee-a3b7-d69d1f0a93a9
+
+	measure 'Follows - This Month' = CALCULATE ( [Sum of Follows], 'Calendar'[This Month] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: 14101fe2-6dd7-4d9c-a1a4-d866b9c95fdb
+
+	measure 'Follows - Last Month' = CALCULATE ( [Sum of Follows], 'Calendar'[Last Month MTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: 2c3aa266-49ad-427e-bfcc-af6ba017125c
+
+	measure 'Follows - This Year' = CALCULATE ( [Sum of Follows], 'Calendar'[This Year] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: 4f09319d-59e7-44e2-b795-2bde8dd81944
+
+	measure 'Follows - Last Year' = CALCULATE ( [Sum of Follows], 'Calendar'[Last Year YTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: 5e85711b-bb8a-4572-b0c3-29ae0c244da6
+
+	measure 'Follows - This Quarter' = CALCULATE ( [Sum of Follows], 'Calendar'[This Quarter] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: d2cc6960-3a30-48f0-9c4c-6b607a3acf7d
+
+	measure 'Follows - Last Quarter' = CALCULATE ( [Sum of Follows], 'Calendar'[Last Quarter QTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: 12747d4b-c4e8-4f2c-929e-55d94c823e35
+
+	measure 'Total Follows' = CALCULATE ( [Sum of Follows], ALL('Calendar'[Date]) ) + 0
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: 9482da22-06d5-43b2-8b36-9a34083a4b89
+
+	measure 'Interaction - This week' = CALCULATE ( [Sum of Interaction], 'Calendar'[This Week] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: 5aaa390b-28d5-4cbd-9887-039d390c5d2f
+
+	measure 'Interaction - Last week' = CALCULATE ( [Sum of Interaction], 'Calendar'[Last Week WTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: 58d3e2ec-b55d-4924-b545-2ce3867131e6
+
+	measure 'Interaction - This Month' = CALCULATE ( [Sum of Interaction], 'Calendar'[This Month] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: bc7ee7bb-a7a0-41a8-afb0-5ba5341150cc
+
+	measure 'Interaction - Last Month' = CALCULATE ( [Sum of Interaction], 'Calendar'[Last Month MTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: fa522322-6e2e-4d72-a6e3-cec5f11dc0f2
+
+	measure 'Interaction - This Year' = CALCULATE ( [Sum of Interaction], 'Calendar'[This Year] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: 13d8c6d8-8b9a-4af0-b24e-5fa1928ac74a
+
+	measure 'Interaction - Last Year' = CALCULATE ( [Sum of Interaction], 'Calendar'[Last Year YTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: de38a5ff-5c9c-4ef5-881a-26d095227dd8
+
+	measure 'Interaction - This Quarter' = CALCULATE ( [Sum of Interaction], 'Calendar'[This Quarter] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: 1433e4c0-11d7-48ce-a448-602be0b0a9fb
+
+	measure 'Interaction - Last Quarter' = CALCULATE ( [Sum of Interaction], 'Calendar'[Last Quarter QTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: 15839e83-78bd-44cc-be1d-dd0e64058f91
+
+	measure 'Total Interaction' = CALCULATE ( [Sum of Interaction], ALL('Calendar'[Date]) ) + 0
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: 7e841112-e9d0-4202-b68c-9ede6e11ad53
+
+	measure 'Reach - This week' = CALCULATE ( [Sum of Reach], 'Calendar'[This Week] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: 0b1379c0-4c22-4476-bf72-82c7eb5c7ab5
+
+	measure 'Reach - Last week' = CALCULATE ( [Sum of Reach], 'Calendar'[Last Week WTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: fb9c4e79-7c48-47c0-b4de-45d020a176f2
+
+	measure 'Reach - This Month' = CALCULATE ( [Sum of Reach], 'Calendar'[This Month] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: 9ca5953e-09be-46a6-b447-77553cd6802b
+
+	measure 'Reach - Last Month' = CALCULATE ( [Sum of Reach], 'Calendar'[Last Month MTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: 93b7fbf5-909e-4e58-a5be-a7acd2599756
+
+	measure 'Reach - This Year' = CALCULATE ( [Sum of Reach], 'Calendar'[This Year] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: 341db738-00da-414f-95bf-cb79e17022e4
+
+	measure 'Reach - Last Year' = CALCULATE ( [Sum of Reach], 'Calendar'[Last Year YTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: e889f096-caca-4963-825a-f7dae379da2f
+
+	measure 'Reach - This Quarter' = CALCULATE ( [Sum of Reach], 'Calendar'[This Quarter] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: 0e7adb08-da30-4ec1-ab95-7ede9e1973eb
+
+	measure 'Reach - Last Quarter' = CALCULATE ( [Sum of Reach], 'Calendar'[Last Quarter QTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: ef3b1934-b2ca-4935-9c32-9c8aec489345
+
+	measure 'Total Reach' = CALCULATE ( [Sum of Reach], ALL('Calendar'[Date]) ) + 0
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: 70bf25db-680e-41a3-824c-212a4ab90478
+
+	measure 'Visits - This week' = CALCULATE ( [Sum of Visits], 'Calendar'[This Week] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: 411c6777-c893-4189-8eb2-ad37b751c7ba
+
+	measure 'Visits - Last week' = CALCULATE ( [Sum of Visits], 'Calendar'[Last Week WTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: 80ee60a7-f259-4385-b4bf-45ed9cf4ed86
+
+	measure 'Visits - This Month' = CALCULATE ( [Sum of Visits], 'Calendar'[This Month] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: 63da6a80-f066-4cc5-a241-1401e4d43f5b
+
+	measure 'Visits - Last Month' = CALCULATE ( [Sum of Visits], 'Calendar'[Last Month MTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: 681a77e9-9e6c-4474-a021-538b998003f7
+
+	measure 'Visits - This Year' = CALCULATE ( [Sum of Visits], 'Calendar'[This Year] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: da7242d7-ddbb-4152-a4f7-3f5e10d0ac79
+
+	measure 'Visits - Last Year' = CALCULATE ( [Sum of Visits], 'Calendar'[Last Year YTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: d129f5bc-28d8-4b25-aa30-709dab20ce28
+
+	measure 'Visits - This Quarter' = CALCULATE ( [Sum of Visits], 'Calendar'[This Quarter] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: dcd99076-f220-4612-9882-fbe66b8a02a4
+
+	measure 'Visits - Last Quarter' = CALCULATE ( [Sum of Visits], 'Calendar'[Last Quarter QTD] = 1 ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: ca0f47e8-2180-4314-bdff-ed32616229b6
+
+	measure 'Total Visits' = CALCULATE ( [Sum of Visits], ALL('Calendar'[Date]) ) + 0
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: 2ff3edda-1495-4631-9c44-5a1a33642e35
+
+	measure 'Up Arrow' = UNICHAR(8593)
+		displayFolder: Others
+		lineageTag: 171ee126-0fd9-4488-bd52-6bc2141d1da7
+
+	measure 'Down Arrow' = UNICHAR(8595)
+		displayFolder: Others
+		lineageTag: a2b9ddbf-e8ea-4302-a819-2f268ea7c898
+
+	measure 'Neutral Arrow' = UNICHAR(8212)
+		displayFolder: Others
+		lineageTag: 60cf352c-de38-4570-beae-aea1a4911004
+
+	measure 'Visits - Change vs LW' = ```
+			
+					VAR Cur = [Visits - This week]
+					VAR Prev = [Visits - Last week]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last week WTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last week WTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last week WTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Visits - Change
+		lineageTag: 23de5a00-12a3-485a-b9be-c701aad3dd00
+
+	measure 'Visits - Change vs LQ' = ```
+			
+					VAR Cur = [Visits - This Quarter]
+					VAR Prev = [Visits - Last Quarter]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last quarter QTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last quarter QTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last quarter QTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Visits - Change
+		lineageTag: 07c846db-b00b-43af-a8cc-560301095bb1
+
+	measure 'Visits - Change vs LM' = ```
+			
+					VAR Cur = [Visits - This Month]
+					VAR Prev = [Visits - Last Month]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last month MTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last month MTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last month MTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Visits - Change
+		lineageTag: 6703dedb-fd9f-4dca-b6bc-4891bce3a717
+
+	measure 'Visits - Change vs LY' = ```
+			
+					VAR Cur = [Visits - This Year]
+					VAR Prev = [Visits - Last Year]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod =
+					IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last year YTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last year YTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last year YTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Visits - Change
+		lineageTag: 06009dc5-f694-4e1d-b144-8ea3299395a4
+
+	measure 'Visits vs Last' = ```
+			
+					VAR TP = CALCULATE(FIRSTNONBLANK(
+						'Time Period'[Time Period],
+						FALSE()
+					))
+					RETURN
+						SWITCH(
+							TP,
+							"This Week", [Visits - Change vs LW],
+							"This Month", [Visits - Change vs LM],
+							"This Quarter", [Visits - Change vs LQ],
+							"This Year", [Visits - Change vs LY]
+						)
+			```
+		displayFolder: Visits - Change
+		lineageTag: bc33584c-8dd6-4154-97d9-74c10b5cdffd
+
+	measure Visits = ```
+			
+			VAR TP = CALCULATE ( FIRSTNONBLANK ( 'Time Period'[Time Period] , FALSE() ) )
+			RETURN  
+			SWITCH ( TP, 
+			"This Week", [Visits - This week],
+			"This Month", [Visits - This Month],
+			"This Quarter", [Visits - This Quarter],
+			"This Year", [Visits - This Year] 
+			)
+			```
+		formatString: #,0
+		displayFolder: Visits - Time Period
+		lineageTag: 1bb4f876-7631-4ea0-8216-917bfe794226
+
+	measure Reach = ```
+			
+			VAR TP = CALCULATE ( FIRSTNONBLANK ( 'Time Period'[Time Period] , FALSE() ) )
+			RETURN  
+			SWITCH ( TP, 
+			"This Week", [Reach - This week],
+			"This Month", [Reach - This Month],
+			"This Quarter", [Reach - This Quarter],
+			"This Year", [Reach - This Year] 
+			)
+			```
+		formatString: #,0
+		displayFolder: Reach - Time Period
+		lineageTag: ba2a2f97-dca7-42d6-98bd-6f1ed2b39bd1
+
+	measure Interaction = ```
+			
+			VAR TP = CALCULATE ( FIRSTNONBLANK ( 'Time Period'[Time Period] , FALSE() ) )
+			RETURN  
+			SWITCH ( TP, 
+			"This Week", [Interaction - This week],
+			"This Month", [Interaction - This Month],
+			"This Quarter", [Interaction - This Quarter],
+			"This Year", [Interaction - This Year] 
+			)
+			```
+		formatString: #,0
+		displayFolder: Interaction - Time Period
+		lineageTag: 7f24082f-3692-4cd8-9640-c8ef476e85ce
+
+	measure Follows = ```
+			
+			VAR TP = CALCULATE ( FIRSTNONBLANK ( 'Time Period'[Time Period] , FALSE() ) )
+			RETURN  
+			SWITCH ( TP, 
+			"This Week", [Follows - This week],
+			"This Month", [Follows - This Month],
+			"This Quarter", [Follows - This Quarter],
+			"This Year", [Follows - This Year] 
+			)
+			```
+		formatString: #,0
+		displayFolder: Follows - Time Period
+		lineageTag: f861f851-d039-489c-b0dd-9c92b387df40
+
+	measure 'Reach - Change vs LQ' = ```
+			
+					VAR Cur = [Reach - This Quarter]
+					VAR Prev = [Reach - Last Quarter]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last quarter QTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last quarter QTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last quarter QTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Reach - Change
+		lineageTag: ed3ae80f-9c5b-436d-ab44-896afb6b0c56
+
+	measure 'Reach - Change vs LM' = ```
+			
+					VAR Cur = [Reach - This Month]
+					VAR Prev = [Reach - Last Month]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last month MTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last month MTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last month MTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Reach - Change
+		lineageTag: 7d0ae5b0-2795-42e1-aa14-40504824cab0
+
+	measure 'Reach - Change vs LW' = ```
+			
+					VAR Cur = [Reach - This week]
+					VAR Prev = [Reach - Last week]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last week WTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last week WTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last week WTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Reach - Change
+		lineageTag: cd244265-a662-4403-bfb0-487c5c5d7bd4
+
+	measure 'Reach - Change vs LY' = ```
+			
+					VAR Cur = [Reach - This Year]
+					VAR Prev = [Reach - Last Year]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod =
+					IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last year YTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last year YTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last year YTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Reach - Change
+		lineageTag: 93ca7d0a-7947-4197-b7f3-e02c9acfdb19
+
+	measure 'Reach vs Last' = ```
+			
+					VAR TP = CALCULATE(FIRSTNONBLANK(
+						'Time Period'[Time Period],
+						FALSE()
+					))
+					RETURN
+						SWITCH(
+							TP,
+							"This Week", [Reach - Change vs LW],
+							"This Month", [Reach - Change vs LM],
+							"This Quarter", [Reach - Change vs LQ],
+							"This Year", [Reach - Change vs LY]
+						)
+			```
+		displayFolder: Reach - Change
+		lineageTag: c30da816-a300-47a9-969b-ebdda505a2dd
+
+	measure 'Interaction - Change vs LQ' = ```
+			
+					VAR Cur = [Interaction - This Quarter]
+					VAR Prev = [Interaction - Last Quarter]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last quarter QTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last quarter QTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last quarter QTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Interaction - Change
+		lineageTag: ba5e5273-abe3-4a34-9f36-35652f969156
+
+	measure 'Interaction - Change vs LM' = ```
+			
+					VAR Cur = [Interaction - This Month]
+					VAR Prev = [Interaction - Last Month]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last month MTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last month MTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last month MTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Interaction - Change
+		lineageTag: 1c153ade-3c4e-412e-aeca-c4bfe7e0509c
+
+	measure 'Interaction - Change vs LW' = ```
+			
+					VAR Cur = [Interaction - This week]
+					VAR Prev = [Interaction - Last week]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last week WTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last week WTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last week WTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Interaction - Change
+		lineageTag: ef428b9b-f59b-4d90-b704-5c5e2d5864a4
+
+	measure 'Interaction - Change vs LY' = ```
+			
+					VAR Cur = [Interaction - This Year]
+					VAR Prev = [Interaction - Last Year]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod =
+					IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last year YTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last year YTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last year YTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Interaction - Change
+		lineageTag: ac29a29c-9b97-442b-bb8d-0ecfdd746c59
+
+	measure 'Interaction vs Last' = ```
+			
+					VAR TP = CALCULATE(FIRSTNONBLANK(
+						'Time Period'[Time Period],
+						FALSE()
+					))
+					RETURN
+						SWITCH(
+							TP,
+							"This Week", [Interaction - Change vs LW],
+							"This Month", [Interaction - Change vs LM],
+							"This Quarter", [Interaction - Change vs LQ],
+							"This Year", [Interaction - Change vs LY]
+						)
+			```
+		displayFolder: Interaction - Change
+		lineageTag: a5c08171-28ee-4ff6-ad1b-45357efb6169
+
+	measure 'Follows - Change vs LQ' = ```
+			
+					VAR Cur = [Follows - This Quarter]
+					VAR Prev = [Follows - Last Quarter]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last quarter QTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last quarter QTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last quarter QTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Follows- Change
+		lineageTag: 10072d0f-ac1a-4070-be30-bc437e610c55
+
+	measure 'Follows - Change vs LM' = ```
+			
+					VAR Cur = [Follows - This Month]
+					VAR Prev = [Follows - Last Month]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last month MTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last month MTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last month MTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Follows- Change
+		lineageTag: 47d244e2-ffde-4623-8f6c-640a9b59b63d
+
+	measure 'Follows - Change vs LW' = ```
+			
+					VAR Cur = [Follows - This week]
+					VAR Prev = [Follows - Last week]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod = IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last week WTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last week WTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last week WTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Follows- Change
+		lineageTag: 7e7a28bc-c9c0-417e-ae99-48256ebfe44d
+
+	measure 'Follows - Change vs LY' = ```
+			
+					VAR Cur = [Follows - This Year]
+					VAR Prev = [Follows - Last Year]
+					VAR Change = (Cur - Prev) / Prev
+					VAR Change_Mod =
+					IF(
+						Change >= 0,
+						Change,
+						Change * -1
+					)
+					VAR Change_Perc =
+					IF(
+						Prev = 0,
+						Cur & " more than last year YTD",
+						IF(
+							Cur = 0,
+							Prev & " less than last year YTD",
+							FORMAT(
+								Change_Mod,
+								"##,##0.0%"
+							) & " than last year YTD"
+						)
+					)
+					VAR Arrow =
+					IF(
+						Change > 0,
+						[Up Arrow],
+						IF(
+							Change < 0,
+							[Down Arrow],
+							[Neutral Arrow]
+						)
+					)
+					RETURN
+						Arrow & " " & Change_Perc
+			```
+		displayFolder: Follows- Change
+		lineageTag: 96401aea-4c35-443b-b9a1-6ad4899df699
+
+	measure 'Follows vs Last' = ```
+			
+					VAR TP = CALCULATE(FIRSTNONBLANK(
+						'Time Period'[Time Period],
+						FALSE()
+					))
+					RETURN
+						SWITCH(
+							TP,
+							"This Week", [Follows - Change vs LW],
+							"This Month", [Follows - Change vs LM],
+							"This Quarter", [Follows - Change vs LQ],
+							"This Year", [Follows - Change vs LY]
+						)
+			```
+		displayFolder: Follows- Change
+		lineageTag: f9b9049a-5b32-4303-a6b7-960114385d75
+
+	measure 'Visits vs Last Colour' =
+			VAR _Week =
+					VAR Cur = [Visits - This week]
+					VAR Prev = [Visits - Last week]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR _Month =
+					VAR Cur = [Visits - This Month]
+					VAR Prev = [Visits - Last Month]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+					VAR _Quarter =
+					VAR Cur = [Visits - This Quarter]
+					VAR Prev = [Visits - Last Quarter]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR _Year =
+					VAR Cur = [Visits - This Year]
+					VAR Prev = [Visits - Last Year]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR TP = CALCULATE(FIRSTNONBLANK(
+						'Time Period'[Time Period],
+						FALSE()
+					))
+					RETURN
+						SWITCH(
+							TP,
+							"This Week", _Week,
+							"This Month", _Month,
+							"This Quarter", _Quarter,
+							"This Year", _Year
+						)
+		displayFolder: Visits - Change
+		lineageTag: da0b7c28-3141-4935-921f-819a47fe22ab
+
+	measure Green = "#15CAB6"
+		displayFolder: Others
+		lineageTag: 71190da5-05b8-497a-bd13-f8dc64a3117e
+
+	measure Red = "#E85E76"
+		displayFolder: Others
+		lineageTag: c52365bc-0f9c-4fcd-9365-13510508ae01
+
+	measure Yellow = "#F6B53D"
+		displayFolder: Others
+		lineageTag: bee6a673-546c-4ddc-8539-6132bbac1f55
+
+	measure Grey = "#CCCCCC"
+		displayFolder: Others
+		lineageTag: dfc2e200-2b2e-494c-b9f6-5247f62c3708
+
+	measure 'Follows vs Last Colour' =
+			VAR _Week =
+					VAR Cur = [Follows - This week]
+					VAR Prev = [Follows - Last week]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR _Month =
+					VAR Cur = [Follows - This Month]
+					VAR Prev = [Follows - Last Month]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+					VAR _Quarter =
+					VAR Cur = [Follows - This Quarter]
+					VAR Prev = [Follows - Last Quarter]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR _Year =
+					VAR Cur = [Follows - This Year]
+					VAR Prev = [Follows - Last Year]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR TP = CALCULATE(FIRSTNONBLANK(
+						'Time Period'[Time Period],
+						FALSE()
+					))
+					RETURN
+						SWITCH(
+							TP,
+							"This Week", _Week,
+							"This Month", _Month,
+							"This Quarter", _Quarter,
+							"This Year", _Year
+						)
+		displayFolder: Follows- Change
+		lineageTag: 1d73a0e5-dc2d-44fb-a6e7-ff5b32be26b1
+
+	measure 'Interaction vs Last Colour' =
+			VAR _Week =
+					VAR Cur = [Interaction - This week]
+					VAR Prev = [Interaction - Last week]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR _Month =
+					VAR Cur = [Interaction - This Month]
+					VAR Prev = [Interaction - Last Month]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+					VAR _Quarter =
+					VAR Cur = [Interaction - This Quarter]
+					VAR Prev = [Interaction - Last Quarter]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR _Year =
+					VAR Cur = [Interaction - This Year]
+					VAR Prev = [Interaction - Last Year]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR TP = CALCULATE(FIRSTNONBLANK(
+						'Time Period'[Time Period],
+						FALSE()
+					))
+					RETURN
+						SWITCH(
+							TP,
+							"This Week", _Week,
+							"This Month", _Month,
+							"This Quarter", _Quarter,
+							"This Year", _Year
+						)
+		displayFolder: Interaction - Change
+		lineageTag: 670227d1-4ba4-480c-a7c8-c235b06d06c0
+
+	measure 'Reach vs Last Colour' =
+			VAR _Week =
+					VAR Cur = [Reach - This week]
+					VAR Prev = [Reach - Last week]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR _Month =
+					VAR Cur = [Reach - This Month]
+					VAR Prev = [Reach - Last Month]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+					VAR _Quarter =
+					VAR Cur = [Reach - This Quarter]
+					VAR Prev = [Reach - Last Quarter]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR _Year =
+					VAR Cur = [Reach - This Year]
+					VAR Prev = [Reach - Last Year]
+					VAR Change = (Cur - Prev)
+					VAR Color =
+					IF(
+						Change > 0,
+						[Green],
+						IF(
+							Change < 0,
+							[Red],
+							[Yellow]
+						)
+					)
+					RETURN
+						Color
+			
+			
+					VAR TP = CALCULATE(FIRSTNONBLANK(
+						'Time Period'[Time Period],
+						FALSE()
+					))
+					RETURN
+						SWITCH(
+							TP,
+							"This Week", _Week,
+							"This Month", _Month,
+							"This Quarter", _Quarter,
+							"This Year", _Year
+						)
+		displayFolder: Reach - Change
+		lineageTag: bd1172eb-38fd-449c-ab9d-3a6073ca7ef8
+
+	partition Calculation = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

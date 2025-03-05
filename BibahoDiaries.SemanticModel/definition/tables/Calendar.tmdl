@@ -1,0 +1,426 @@
+table Calendar
+	lineageTag: 0fc26539-dae5-4fc9-abc3-4c41c639b261
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: a9cafebd-b8b1-4ebf-8843-1e0efadf799f
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: string
+		lineageTag: 3ddec1a8-8e57-42bc-aab2-2442b4e9c65d
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: fdceb287-ce5a-4e9c-80aa-3a84f589503e
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: string
+		lineageTag: 98fff2a1-ce22-4ed3-948b-eb34c0000e64
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 71836505-6ee3-45df-bcb5-296cbf77a8b0
+		summarizeBy: none
+		sourceColumn: Month Start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Month End'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9d37cb2d-f67a-47a1-b98b-e11998efa306
+		summarizeBy: none
+		sourceColumn: Month End
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Year Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4e0af687-2c3d-4d9e-80ee-e65261d19b85
+		summarizeBy: none
+		sourceColumn: Year Start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Year End'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 522b1c5d-12a5-4cff-bd3b-5b104894bcb0
+		summarizeBy: none
+		sourceColumn: Year End
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Quarter Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 37cf6c92-0064-4759-bfb4-00d10d7e9780
+		summarizeBy: none
+		sourceColumn: Quarter Start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Quarter End'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b39bfe88-8260-496a-8de0-01222d281b88
+		summarizeBy: none
+		sourceColumn: Quarter End
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: f7f9bf20-d91c-4ac3-a063-522066f00146
+		summarizeBy: none
+		sourceColumn: Month Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Year'
+		dataType: string
+		lineageTag: 978e5d4c-1308-4581-90f3-d7bbb01db05f
+		summarizeBy: none
+		sourceColumn: Quarter Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Number'
+		dataType: string
+		lineageTag: 1d182d0c-ff37-486b-93bf-10db3b0a0f08
+		summarizeBy: none
+		sourceColumn: Week Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fb036b70-a14e-4961-9f62-dc236f4f678c
+		summarizeBy: none
+		sourceColumn: Week Start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week End'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 46c48873-0923-4453-83e5-71be7600272d
+		summarizeBy: none
+		sourceColumn: Week End
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Today
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f8f7f7a-3384-4540-b5d3-a75347100948
+		summarizeBy: sum
+		sourceColumn: Today
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'This Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5061cf5a-8369-4187-afe1-b244bea26dce
+		summarizeBy: sum
+		sourceColumn: This Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3299399a-6336-4394-9389-9f33c8614c1b
+		summarizeBy: sum
+		sourceColumn: Last Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'This Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7899ec01-5d0d-4f64-bff3-627480ca4bab
+		summarizeBy: sum
+		sourceColumn: This Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: d324487f-cd2a-4a11-b556-d9d7a49ab4b2
+		summarizeBy: sum
+		sourceColumn: Last Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'This Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: f39d4276-c55e-44a0-8751-0a0ff5bff959
+		summarizeBy: sum
+		sourceColumn: This Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: cfb9228d-f6ab-4bd1-b658-812803b1ff32
+		summarizeBy: sum
+		sourceColumn: Last Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'This Quarter'
+		dataType: int64
+		formatString: 0
+		lineageTag: d75a114f-eb72-4ee2-aff5-8553f4c05745
+		summarizeBy: sum
+		sourceColumn: This Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Quarter'
+		dataType: int64
+		formatString: 0
+		lineageTag: 74c3a2b9-5972-403b-9567-2ff1410ddde7
+		summarizeBy: sum
+		sourceColumn: Last Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d7a9898-5840-4ca4-b319-57dee0ed064f
+		summarizeBy: sum
+		sourceColumn: Day of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Quarter'
+		dataType: int64
+		formatString: 0
+		lineageTag: d9bde8ae-f72d-4191-9abe-ac4f8f8efd56
+		summarizeBy: sum
+		sourceColumn: Day of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: fee6d4b6-4c7b-4856-ac02-a969d1aeb990
+		summarizeBy: sum
+		sourceColumn: Day of Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: 927d7cbe-a8f3-4e7a-ba87-04864d0bafa4
+		summarizeBy: sum
+		sourceColumn: Day of Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Week WTD'
+		dataType: int64
+		formatString: 0
+		lineageTag: a6071bf8-1630-4e94-ada9-bc8ad26b5792
+		summarizeBy: sum
+		sourceColumn: Last Week WTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Month MTD'
+		dataType: int64
+		formatString: 0
+		lineageTag: a8a9d391-7f01-4195-bfe9-e671c06f4be5
+		summarizeBy: sum
+		sourceColumn: Last Month MTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Year YTD'
+		dataType: int64
+		formatString: 0
+		lineageTag: a49654a5-5363-412f-819c-602020b61318
+		summarizeBy: sum
+		sourceColumn: Last Year YTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Quarter QTD'
+		dataType: int64
+		formatString: 0
+		lineageTag: 92c940c1-0a37-4c43-93da-0dc1ed7cc1e2
+		summarizeBy: sum
+		sourceColumn: Last Quarter QTD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = m
+		mode: import
+		source = ```
+				let
+				    // Define start and end dates
+				    StartDate = #date(2024, 1, 1),
+				    EndDate = Date.From(DateTime.LocalNow()),
+				
+				    // Generate a list of dates from start to end
+				    DateList = List.Dates(StartDate, Duration.Days(EndDate - StartDate) + 1, #duration(1, 0, 0, 0)),
+				
+				    // Convert the list to a table
+				    CalendarTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),
+				
+				    // Sort the rows by date in descending order
+				    SortedRows = Table.Sort(CalendarTable, {{"Date", Order.Descending}}),
+				
+				    // Add additional columns for year, month, day, and other attributes
+				    CalendarWithColumns = 
+				    Table.AddColumn(
+				    Table.AddColumn(
+				        Table.AddColumn(
+				            Table.AddColumn(
+				                Table.AddColumn(
+				                    Table.AddColumn(
+				                        Table.AddColumn(
+				                            Table.AddColumn(
+				                                Table.AddColumn(
+				                                    Table.AddColumn(
+				                                        Table.AddColumn(
+				                                            Table.AddColumn(
+				                                                Table.AddColumn(
+				                                                    Table.AddColumn(
+				                                                        SortedRows,
+				                                                        "Year", each Date.Year([Date])
+				                                                    ),
+				                                                    "Month", each Date.Month([Date])
+				                                                ),
+				                                                "Day", each Date.Day([Date])
+				                                            ),
+				                                            "Month Start", each Date.StartOfMonth([Date])
+				                                        ),
+				                                        "Month End", each Date.EndOfMonth([Date])
+				                                    ),
+				                                    "Year Start", each Date.StartOfYear([Date])
+				                                ),
+				                                "Year End", each Date.EndOfYear([Date])
+				                            ),
+				                            "Quarter Start", each Date.StartOfQuarter([Date])
+				                        ),
+				                        "Quarter End", each Date.EndOfQuarter([Date])
+				                    ),
+				                    "Month Year", each Date.ToText([Date], "MMM yyyy")
+				                ),
+				                "Quarter Year", each "Q" & Number.ToText(Date.QuarterOfYear([Date])) & " " & Number.ToText(Date.Year([Date]))
+				            ),
+				            "Week Number", each Date.WeekOfYear([Date])
+				        ),
+				        "Week Start", each Date.StartOfWeek([Date])
+				    ),
+				 "Week End", each Date.EndOfWeek([Date])
+				    ),
+				    // Continue adding more columns as needed
+				    CalendarWithColumns2 = 
+				                        Table.AddColumn(
+				                            Table.AddColumn(
+				                                Table.AddColumn(
+				                                    Table.AddColumn(
+				                                        Table.AddColumn(
+				                                            Table.AddColumn(
+				                                                Table.AddColumn(
+				                                                    Table.AddColumn(
+				                                                        Table.AddColumn(
+				                                                            CalendarWithColumns,
+				                                                            "Today", each if [Date] = Date.From(DateTime.LocalNow()) then 1 else 0
+				                                                        ),
+				                                                        "This Week", each if Date.IsInCurrentWeek([Date]) then 1 else 0
+				                                                    ),
+				                                                    "Last Week", each if Date.IsInPreviousWeek([Date]) then 1 else 0
+				                                                ),
+				                                            "This Month", each if Date.IsInCurrentMonth([Date]) then 1 else 0
+				                                        ),
+				                                        "Last Month", each if Date.IsInPreviousMonth([Date]) then 1 else 0
+				                                    ),
+				                                "This Year", each if Date.IsInCurrentYear([Date]) then 1 else 0
+				                            ),
+				                            "Last Year", each if Date.IsInPreviousYear([Date]) then 1 else 0
+				                        ),
+				                    "This Quarter", each if Date.IsInCurrentQuarter([Date]) then 1 else 0
+				                ),
+				                "Last Quarter", each if Date.IsInPreviousQuarter([Date]) then 1 else 0
+				            ),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(CalendarWithColumns2, {{"Date", type date}, {"Month Start", type date}, {"Month End", type date}, {"Year Start", type date}, {"Year End", type date}, {"Quarter Start", type date}, {"Quarter End", type date}, {"Week Start", type date}, {"Week End", type date}}, "en-IN"),
+				    CalendarWithColumns3 = 
+				                        Table.AddColumn(
+				                            Table.AddColumn(
+				                                Table.AddColumn(
+				                                    Table.AddColumn(#"Changed Type with Locale",
+				    "Day of Year", each Date.DayOfYear([Date])),
+				            "Day of Quarter", each 
+				                     Duration.Days([Date] - [Quarter Start]) + 1),
+				            "Day of Month", each Date.Day([Date])),
+				            "Day of Week", each Date.DayOfWeek([Date]) + 1 ),
+				 CalendarWithColumns4 = 
+				                        Table.AddColumn(
+				                            Table.AddColumn(
+				                                Table.AddColumn(
+				                                    Table.AddColumn(#"CalendarWithColumns3",
+				     "Last Week WTD", each if [Last Week] = 1 and [Day of Week] <= Date.DayOfWeek(EndDate) then 1 else 0 ),
+				            "Last Month MTD", each if [Last Month] = 1 and [Day of Month] <= Date.Day(EndDate) then 1 else 0 ),
+				            "Last Year YTD", each if [Last Year] = 1 and [Day of Year] <= Date.DayOfYear(EndDate) then 1 else 0 ),
+				            "Last Quarter QTD", each if [Last Quarter] = 1 and [Day of Quarter] <= Duration.Days(EndDate - Date.StartOfQuarter(EndDate)) + 1 then 1 else 0 ),
+				    #"Changed Type" = Table.TransformColumnTypes(CalendarWithColumns4,{{"Today", Int64.Type}, {"This Week", Int64.Type}, {"Last Week", Int64.Type}, {"This Month", Int64.Type}, {"Last Month", Int64.Type}, {"This Year", Int64.Type}, {"Last Year", Int64.Type}, {"This Quarter", Int64.Type}, {"Last Quarter", Int64.Type}, {"Day of Year", Int64.Type}, {"Day of Quarter", Int64.Type}, {"Day of Month", Int64.Type}, {"Day of Week", Int64.Type}, {"Last Week WTD", Int64.Type}, {"Last Month MTD", Int64.Type}, {"Last Year YTD", Int64.Type}, {"Last Quarter QTD", Int64.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

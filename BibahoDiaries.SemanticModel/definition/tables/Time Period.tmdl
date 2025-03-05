@@ -1,0 +1,48 @@
+table 'Time Period'
+	lineageTag: f93a7453-fc9e-4288-8f2d-e9647c0130aa
+
+	measure 'Last Time Period' = ```
+			
+			VAR TP = CALCULATE ( FIRSTNONBLANK ( 'Time Period'[Time Period] , FALSE() ) )
+			RETURN  
+			SWITCH ( TP, 
+			"This Week", "vs Last Week :",
+			"This Month", "vs Last Month :",
+			"This Quarter","vs Last Quarter :",
+			"This Year", "vs Last Year :"
+			)
+			```
+		lineageTag: 6e6c43c0-5254-4670-8e99-cebda381f099
+
+	column 'Time Period'
+		dataType: string
+		lineageTag: 7e3c1601-4147-49df-8c54-b84b16abc708
+		summarizeBy: none
+		sourceColumn: Time Period
+		sortByColumn: Key
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key
+		dataType: int64
+		formatString: 0
+		lineageTag: 76c5b9e0-43fc-4eea-8e5e-e1e3ad5069cc
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Time Period' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCsnILFYIT03NVtJRMlCK1YGK+ObnlWQAhQwRQoGliUUlqUVAQSOEYGRqIkjEWCk2FgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t, Key = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Key", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Time Period"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

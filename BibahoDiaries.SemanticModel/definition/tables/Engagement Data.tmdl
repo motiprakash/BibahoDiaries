@@ -1,0 +1,74 @@
+table 'Engagement Data'
+	lineageTag: 30a60283-52c0-4d29-b7c2-eade1e6d06c7
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8085db4d-13d6-4ffe-a811-cd39fe9c20ed
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 56868f31-8527-4fd4-833c-8afc99054580
+			defaultHierarchy: LocalDateTable_8ddb57fc-7b09-4450-a8b4-2ca8d0d0347b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Reach
+		dataType: int64
+		formatString: 0
+		lineageTag: 67dc457a-72cd-44e8-8268-395d3fd0bce1
+		summarizeBy: sum
+		sourceColumn: Reach
+
+		annotation SummarizationSetBy = Automatic
+
+	column Interaction
+		dataType: int64
+		formatString: 0
+		lineageTag: d06afce2-ce3d-4bf7-a0cd-c1dd3f1b196f
+		summarizeBy: sum
+		sourceColumn: Interaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column Visits
+		dataType: int64
+		formatString: 0
+		lineageTag: ad69d977-b6dc-43d1-8b17-4bad208f8574
+		summarizeBy: sum
+		sourceColumn: Visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column Follows
+		dataType: int64
+		formatString: 0
+		lineageTag: e92b7580-de09-4947-9b48-6dc65666805e
+		summarizeBy: sum
+		sourceColumn: Follows
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Engagement Data' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("M:\Business\Clients\Bibaho Diaries\insta_ex.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Promoted Headers", "Date ", Splitter.SplitTextByDelimiter("T", QuoteStyle.Csv), {"Date .1", "Date .2"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Split Column by Delimiter",{"Date .2"}),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Removed Columns", {{"Date .1", type date}}, "en-IN"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type with Locale",{{"Date .1", "Date"}, {"Visti", "Visits"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Follows", Int64.Type}, {"Visits", Int64.Type}, {"Interaction", Int64.Type}, {"Reach", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

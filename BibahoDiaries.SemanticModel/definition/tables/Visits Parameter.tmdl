@@ -1,0 +1,50 @@
+table 'Visits Parameter'
+	lineageTag: c863cf77-0153-420e-a0ef-df704f2916b9
+
+	column 'Visits Parameter'
+		lineageTag: f68da8d8-4b80-4e97-84ef-4c815539f51c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Visits Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Visits Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visits Parameter Fields'
+		isHidden
+		lineageTag: 8ef44bab-9787-44f3-90ff-8b65c3b651ea
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Visits Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visits Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: f7a229ed-78ca-4249-8fec-fb8950e62751
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Visits Parameter' = calculated
+		mode: import
+		source =
+				{
+				    ("Visits - This week", NAMEOF('Calculation'[Visits - This week]), 0),
+				    ("Visits - This Month", NAMEOF('Calculation'[Visits - This Month]), 1),
+				    ("Visits - This Quarter", NAMEOF('Calculation'[Visits - This Quarter]), 2),
+				    ("Visits - This Year", NAMEOF('Calculation'[Visits - This Year]), 3)
+				}
+
+	annotation PBI_Id = 21e1964190eb4b6a8c1f98a202846a8e
+

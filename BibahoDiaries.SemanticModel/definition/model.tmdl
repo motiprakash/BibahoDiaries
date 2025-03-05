@@ -1,0 +1,27 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Engagement Data","Calculation","Calendar","Time Period"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.140.1351.0 (25.02)+9bb96b6a5aee417774126f3416805b86efac121f
+
+annotation PBI_ProTooling = ["CalcGroup","DaxQueryView_Desktop","DevMode"]
+
+ref table 'Engagement Data'
+ref table DateTableTemplate_2f1f5739-0562-4b03-b80e-b4202d5962fb
+ref table LocalDateTable_8ddb57fc-7b09-4450-a8b4-2ca8d0d0347b
+ref table Calculation
+ref table Calendar
+ref table 'Time Period'
+ref table 'Visits Parameter'
+
+ref cultureInfo en-IN
+
